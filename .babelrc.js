@@ -1,5 +1,24 @@
 module.exports = {
   plugins: [
-    "@babel/plugin-proposal-optional-chaining"
+    "@babel/plugin-proposal-optional-chaining",
+    [
+      "module-resolver",
+      {
+        "root": ["./src"],
+        "alias": {
+          "~components": "./src/app/components",
+          "~screens": "./src/app/screens",
+          "~config": "./src/config",
+          "~constants": "./src/constants",
+          "~services": "./src/services",
+          "~utils": "./src/utils",
+          "~app": "./src/app",
+          '~assets': './src/assets',
+          "~hooks": "./src/app/hooks",
+          "~contexts": "./src/app/contexts",
+          "~interfaces":"./src/interfaces"
+        }
+      }
+    ]
   ]
 }
