@@ -1,0 +1,30 @@
+@import '../../../scss/variables/colors';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+.container-sign-up {
+  align-items: center;
+  background-color: $wild-sand;
+  border-top: 8px solid $cerulean;
+  display: flex;
+  flex-direction: column;
+  height: 634px;
+  justify-content: space-evenly;
+  padding: 0 25px;
+  width: 300px;
+
+  > * {
+    width: 100%;
+  }
+}
+
+.form {
+  > * {
+    width: 100%;
+  }
+}

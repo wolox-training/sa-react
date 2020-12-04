@@ -1,0 +1,17 @@
+@import '../../../scss/variables/colors';
+
+.button {
+  border-radius: 5px;
+  padding: 10px;
+
+  &.solid {
+    background-color: $earls-green;
+    color: $white;
+  }
+
+  &.outline {
+    background-color: transparent;
+    border: 1px solid $earls-green;
+    color: $earls-green;
+  }
+}
