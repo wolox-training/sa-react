@@ -22,7 +22,7 @@ function SignUp() {
   });
 
   return (
-    <div className={clsx([styles.container, 'column', 'middle', 'center'])}>
+    <div className={clsx([styles.container, 'column middle center'])}>
       <div className={styles.containerSignUp}>
         <div className="row middle center">
           <img src={logo} alt="logo" />
@@ -90,13 +90,7 @@ function SignUp() {
             {i18next.t('SignUp:signup')}
           </Button>
         </form>
-        <Button
-          variant="outline"
-          className="full-width"
-          onClick={() => {
-            i18next.changeLanguage('es');
-          }}
-        >
+        <Button variant="outline" className="full-width">
           {i18next.t('SignUp:login')}
         </Button>
       </div>
