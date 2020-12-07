@@ -1,10 +1,7 @@
 @import '../../../scss/variables/colors';
 
 .container {
-  display: flex;
-  flex-direction: column;
   min-height: 100vh;
-  justify-content: center;
 }
 
 .container-sign-up {
@@ -17,14 +14,13 @@
   justify-content: space-evenly;
   padding: 0 25px;
   width: 300px;
-
-  > * {
-    width: 100%;
-  }
 }
 
 .form {
-  > * {
+  &::after {
+    border-bottom: 2px solid $gray;
+    content: '';
+    display: inline-block;
     width: 100%;
   }
 }

@@ -3,11 +3,7 @@ import React from 'react';
 import SignUp from './screens/SignUp';
 
 function App() {
-  return (
-    <>
-      <SignUp />
-    </>
-  );
+  return <SignUp />;
 }
 
 export default App;
