@@ -1,0 +1,13 @@
+@import '../../../scss/variables/colors';
+
+.label {
+  color: $black;
+}
+
+.input {
+  border-radius: 5px;
+  border: none;
+  margin: 8px 0;
+  min-height: 32px;
+  width: 100%;
+}
