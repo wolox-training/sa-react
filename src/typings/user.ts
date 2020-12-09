@@ -1,9 +1,16 @@
-interface User {
+export interface User {
   email: string;
   password: string;
   passwordConfirmation: string;
   firstName: string;
   lastName: string;
+  locale: string;
 }
 
-export default User;
+export interface SignUpResponse {
+  id: number;
+  firstName: string;
+  lastName: string;
+  email: string;
+  locale: string;
+}

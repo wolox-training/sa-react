@@ -14,4 +14,9 @@
     border: 1px solid $earls-green;
     color: $earls-green;
   }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
 }

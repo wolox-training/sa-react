@@ -1,0 +1,25 @@
+@import '../../../scss/variables/colors';
+
+.alert {
+  border: 1px dotted $black;
+  border-radius: 5px;
+  padding: 8px;
+  text-align: center;
+  vertical-align: middle;
+  word-wrap: break-word;
+
+  &.error {
+    border-color: $red;
+    color: $red;
+  }
+
+  &.success {
+    border-color: $green;
+    color: $green;
+  }
+
+  &.info {
+    border-color: $blue;
+    color: $blue;
+  }
+}
