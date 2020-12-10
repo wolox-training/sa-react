@@ -16,7 +16,7 @@ import styles from './styles.module.scss';
 import { FORM_FIELDS } from './constants';
 
 function SignUp() {
-  const { register, errors, handleSubmit, watch, formState, reset } = useForm<User>({ mode: 'all' });
+  const { register, errors, handleSubmit, watch, reset, formState } = useForm<User>({ mode: 'all' });
 
   const password = useRef('');
   password.current = watch('password', '');
