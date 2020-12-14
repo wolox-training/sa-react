@@ -4,6 +4,15 @@
   border-radius: 5px;
   padding: 10px;
 
+  &.text-only {
+    background-color: transparent;
+    color: $black;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
   &.solid {
     background-color: $earls-green;
     color: $white;
