@@ -1,9 +1,9 @@
 import React from 'react';
 
-import SignUp from './screens/SignUp';
+import AppRouter from './routers/AppRouter';
 
 function App() {
-  return <SignUp />;
+  return <AppRouter />;
 }
 
 export default App;
