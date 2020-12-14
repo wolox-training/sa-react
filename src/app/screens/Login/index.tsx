@@ -32,9 +32,13 @@ function Login() {
   const onSubmit = handleSubmit((data) => sendRequest(data));
 
   useEffect(() => {
-    const token = state?.headers?.['access-token'];
-    if (token) {
-      saveSession(token);
+    if (state?.headers?.['access-token']) {
+      saveSession({
+        client: state.headers.client,
+        uid: state.headers.uid,
+        token: state.headers['access-token']
+      });
+
       history.replace(ROUTES.home);
     }
   }, [history, state]);

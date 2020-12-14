@@ -5,7 +5,7 @@ export interface ErrorData {
   };
 }
 
-export interface ErrorAuthData {
+export interface ErrorResponse {
   success: boolean;
   errors: string[];
 }
