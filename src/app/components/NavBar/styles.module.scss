@@ -1,0 +1,13 @@
+@import '../../../scss/variables/colors';
+
+.navbar {
+  height: 70px;
+  width: 100%;
+  background-color: $white;
+  box-shadow: 0 4px 10px rgba($black, 0.5);
+  border-top: 6px solid $cerulean;
+}
+
+.logo {
+  pointer-events: none;
+}

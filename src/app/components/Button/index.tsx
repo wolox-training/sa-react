@@ -5,7 +5,7 @@ import styles from './styles.module.scss';
 
 interface Props extends React.HTMLProps<HTMLButtonElement> {
   type?: 'button' | 'reset' | 'submit';
-  variant?: 'outline' | 'solid';
+  variant?: 'outline' | 'solid' | 'text-only';
 }
 
 function Button({ className, variant = 'solid', ...props }: Props) {

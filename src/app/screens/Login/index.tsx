@@ -13,6 +13,7 @@ import Alert from '../../components/Alert';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 import logo from '../../assets/logo-wolox.png';
+import { saveSession } from '../../../utils/session';
 
 import styles from './styles.module.scss';
 import { FORM_FIELDS } from './constants';
@@ -31,7 +32,9 @@ function Login() {
   const onSubmit = handleSubmit((data) => sendRequest(data));
 
   useEffect(() => {
-    if (state?.headers?.['access-token']) {
+    const token = state?.headers?.['access-token'];
+    if (token) {
+      saveSession(token);
       history.replace(ROUTES.home);
     }
   }, [history, state]);
