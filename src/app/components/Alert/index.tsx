@@ -9,7 +9,11 @@ interface Props {
 }
 
 function Alert({ variant, message }: Props) {
-  return <span className={clsx([styles.alert, styles[variant], 'full-width'])}>{message}</span>;
+  return (
+    <span className={clsx([styles.alert, styles[variant], 'full-width'])} role="alert">
+      {message}
+    </span>
+  );
 }
 
 export default Alert;

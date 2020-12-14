@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "apisauce": "^2.0.0",
     "cerealizr": "^1.0.1-alpha",
@@ -24,13 +23,13 @@
     "start": "node ./scripts/start.js development",
     "start-env": "node ./scripts/start.js",
     "build": "node ./scripts/build.js",
-    "test": "rescripts test --env=jsdom",
+    "test": "rescripts test --env=jsdom-fourteen",
     "eject": "./node_modules/react-scripts/bin/react-scripts.js eject",
     "lint": "./node_modules/eslint/bin/eslint.js src --ext .js,.ts,.tsx",
     "lint-fix": "./node_modules/eslint/bin/eslint.js src --fix && ./node_modules/stylelint/bin/stylelint.js '**/*.scss' --fix",
     "lint-scss": "./node_modules/stylelint/bin/stylelint.js '**/*.scss'",
     "lint-diff": "git diff --name-only --cached --relative --diff-filter=ACM | grep \\.js$ | xargs eslint",
-    "coverage-diff": "rescripts test --env=jsdom --coverage --watchAll=false --changedSince=master"
+    "coverage-diff": "rescripts test --env=jsdom-fourteen --coverage --watchAll=false --changedSince=master"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -53,7 +52,7 @@
     "@rescripts/rescript-use-babel-config": "0.0.10",
     "@rescripts/rescript-use-eslint-config": "0.0.11",
     "@testing-library/jest-dom": "^5.11.5",
-    "@testing-library/react": "^11.1.1",
+    "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.2.0",
     "@types/enzyme": "^3.10.8",
     "@types/jest": "^26.0.15",
@@ -87,6 +86,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.5",
     "husky": "^4.3.5",
+    "msw": "^0.24.1",
     "postcss-html": "^0.36.0",
     "postcss-syntax": "^0.36.2",
     "prettier": "^2.1.2",

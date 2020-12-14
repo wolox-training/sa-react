@@ -13,8 +13,12 @@ function Input({ inputRef, label, error, className, ...props }: Props) {
   return (
     <label className={clsx([styles.label, 'm-bottom-3 full-width'])}>
       {label}
-      <input ref={inputRef} {...props} className={clsx([className, styles.input])} />
-      {error && <span className="text-error">{error}</span>}
+      <input ref={inputRef} {...props} className={clsx([className, styles.input])} role="textbox" />
+      {error && (
+        <span className="text-error" role="alert">
+          {error}
+        </span>
+      )}
     </label>
   );
 }

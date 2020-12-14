@@ -6,8 +6,9 @@ const serializer = new SnakecaseSerializer();
 
 const baseURL = process.env.REACT_APP_API_BASE_URL;
 
-const STATUS_CODES = {
+export const STATUS_CODES = {
   unauthorized: 401,
+  unprocessableEntity: 422,
   internalServerError: 500
 };
 
