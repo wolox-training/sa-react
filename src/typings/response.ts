@@ -4,3 +4,8 @@ export interface ErrorData {
     fullMessages: string[];
   };
 }
+
+export interface ErrorAuthData {
+  success: boolean;
+  errors: string[];
+}

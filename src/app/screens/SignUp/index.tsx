@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import i18next from 'i18next';
 import { useForm } from 'react-hook-form';
 import clsx from 'clsx';
+import { useHistory } from 'react-router';
 
 import { User } from '../../../typings/user';
 import logo from '../../assets/logo-wolox.png';
@@ -11,17 +12,24 @@ import { useLazyRequest } from '../../../hooks/useRequest';
 import { signup } from '../../../services/UserService';
 import Alert from '../../components/Alert';
 import { email } from '../../../utils/inputValidations';
+import { ROUTES } from '../../routers/constants';
 
 import styles from './styles.module.scss';
 import { FORM_FIELDS } from './constants';
 
 function SignUp() {
-  const { register, errors, handleSubmit, watch, reset, formState } = useForm<User>({ mode: 'all' });
+  const history = useHistory();
+
+  const { register, errors, handleSubmit, watch, formState, reset } = useForm<User>({ mode: 'all' });
 
   const password = useRef('');
   password.current = watch('password', '');
 
   const [state, loading, error, sendRequest] = useLazyRequest({ request: signup });
+
+  const toLogin = () => {
+    history.push(ROUTES.login);
+  };
 
   const onSubmit = handleSubmit((user) => {
     user.locale = i18next.language;
@@ -29,7 +37,7 @@ function SignUp() {
   });
 
   useEffect(() => {
-    if (state?.id) {
+    if (state?.data?.id) {
       reset();
     }
   }, [state, reset]);
@@ -42,7 +50,7 @@ function SignUp() {
         </div>
         {error && <Alert variant="error" message={error.errorData?.errors.fullMessages.join(', ')} />}
         {loading && <Alert variant="info" message={i18next.t('SignUp:loading')} />}
-        {state?.id && <Alert variant="success" message={i18next.t('SignUp:successful')} />}
+        {state?.data?.id && <Alert variant="success" message={i18next.t('SignUp:successful')} />}
         <form onSubmit={onSubmit} className={styles.form}>
           <Input
             label={i18next.t('SignUp:firstName')}
@@ -108,7 +116,7 @@ function SignUp() {
             {i18next.t('SignUp:signup')}
           </Button>
         </form>
-        <Button variant="outline" className="full-width">
+        <Button variant="outline" className="full-width" onClick={toLogin}>
           {i18next.t('SignUp:login')}
         </Button>
       </div>

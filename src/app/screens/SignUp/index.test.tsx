@@ -3,10 +3,13 @@ import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import { cleanup, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { Router } from 'react-router';
+import { createMemoryHistory } from 'history';
 
 import { STATUS_CODES } from '../../../config/api';
 import { SignUpResponse } from '../../../typings/user';
 import { ErrorData } from '../../../typings/response';
+import { ROUTES } from '../../routers/constants';
 
 import { FORM_FIELDS } from './constants';
 
@@ -122,5 +125,29 @@ describe('SignUp screen', () => {
     await waitFor(() => screen.findByRole('alert'));
 
     expect(screen.getByRole('alert').innerHTML).toContain(mockFailureResponse.errors.fullMessages.join(', '));
+  });
+
+  test('Can go to Login screen', async () => {
+    const history = createMemoryHistory();
+
+    render(
+      <Router history={history}>
+        <SignUp />
+      </Router>
+    );
+
+    const buttons = screen.getAllByRole('button') as HTMLButtonElement[];
+
+    const button = buttons.find((element) => element.type !== 'submit');
+
+    if (!button) {
+      throw new Error('Button not found');
+    }
+
+    userEvent.click(button);
+
+    await waitFor(() => screen.findAllByRole('button'));
+
+    expect(history.location.pathname).toBe(ROUTES.login);
   });
 });

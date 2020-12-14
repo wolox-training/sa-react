@@ -1,0 +1,26 @@
+@import '../../../scss/variables/colors';
+
+.container {
+  min-height: 100vh;
+}
+
+.container-login {
+  align-items: center;
+  background-color: $wild-sand;
+  border-top: 8px solid $cerulean;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  justify-content: space-evenly;
+  padding: 0 25px;
+  width: 300px;
+}
+
+.form {
+  &::after {
+    border-bottom: 2px solid $gray;
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+}
