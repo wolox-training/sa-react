@@ -11,6 +11,7 @@ function AppRouter() {
     <BrowserRouter>
       <Route path={ROUTES.login} component={Login} exact />
       <Route path={ROUTES.signup} component={SignUp} exact />
+      <Route path={ROUTES.home} exact />
     </BrowserRouter>
   );
 }
