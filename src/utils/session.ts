@@ -7,7 +7,7 @@ interface SessionData {
 }
 
 // eslint-disable-next-line no-shadow
-enum StorageKeys {
+export enum StorageKeys {
   TOKEN = 'token',
   CLIENT = 'client',
   UID = 'uid'

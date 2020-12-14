@@ -1,0 +1,36 @@
+@import '../../../scss/variables/colors';
+
+.list {
+  align-self: center;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fill, 198px);
+  justify-content: center;
+  padding: 36px;
+}
+
+.item {
+  height: 300px;
+  background-color: $white;
+  box-shadow: 4px 4px 10px 0 rgba($black, 0.5);
+  padding: 28px;
+
+  .image {
+    width: 142px;
+    height: 200px;
+  }
+
+  .title {
+    color: $black;
+    font-weight: 700;
+    line-height: 18px;
+    display: block;
+  }
+
+  .help-text {
+    color: darken($gray, 20%);
+    font-size: 14px;
+    line-height: 18px;
+    display: block;
+  }
+}

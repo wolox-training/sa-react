@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useRequest } from '../../../hooks/useRequest';
 import { getBooks } from '../../../services/BookService';
-import BookList from '../../components/Booklist';
+import BookList from '../../components/BookList';
 import NavBar from '../../components/NavBar';
 
 import styles from './styles.module.scss';
