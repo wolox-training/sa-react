@@ -43,8 +43,6 @@ function Login() {
           token: state.headers['access-token']
         })
       );
-
-      history.replace(ROUTES.home);
     }
   }, [dispatch, history, state]);
 
