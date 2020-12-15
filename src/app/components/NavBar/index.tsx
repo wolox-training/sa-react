@@ -6,14 +6,18 @@ import { useHistory } from 'react-router';
 import logo from '../../assets/logo-wolox.png';
 import Button from '../Button';
 import { ROUTES } from '../../routers/constants';
+import { useDispatch } from '../../contexts/UserContext';
+import { actionCreators } from '../../contexts/UserContext/reducer';
 
 import styles from './styles.module.scss';
 
 function NavBar() {
+  const dispatch = useDispatch();
+
   const history = useHistory();
 
   const handleClick = () => {
-    localStorage.clear();
+    dispatch(actionCreators.logout());
     history.replace(ROUTES.login);
   };
 

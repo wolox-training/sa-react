@@ -1,12 +1,11 @@
 import { Nullable } from '../utils/types';
 
-interface SessionData {
+export interface SessionData {
   token: string;
   client: string;
   uid: string;
 }
 
-// eslint-disable-next-line no-shadow
 export enum StorageKeys {
   TOKEN = 'token',
   CLIENT = 'client',
@@ -30,3 +29,5 @@ export function getSession(): Nullable<SessionData> {
 
   return { token, client, uid };
 }
+
+export const clearSession = () => localStorage.clear();
