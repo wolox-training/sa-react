@@ -13,12 +13,15 @@ import Alert from '../../components/Alert';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 import logo from '../../assets/logo-wolox.png';
-import { saveSession } from '../../../services/LocalStorageService';
+import { useDispatch } from '../../contexts/UserContext';
+import { actionCreators } from '../../contexts/UserContext/reducer';
 
 import styles from './styles.module.scss';
 import { FORM_FIELDS } from './constants';
 
 function Login() {
+  const dispatch = useDispatch();
+
   const history = useHistory();
 
   const { register, errors, handleSubmit } = useForm<AuthCredentials>();
@@ -33,15 +36,15 @@ function Login() {
 
   useEffect(() => {
     if (state?.headers?.['access-token']) {
-      saveSession({
-        client: state.headers.client,
-        uid: state.headers.uid,
-        token: state.headers['access-token']
-      });
-
-      history.replace(ROUTES.home);
+      dispatch(
+        actionCreators.login({
+          client: state.headers.client,
+          uid: state.headers.uid,
+          token: state.headers['access-token']
+        })
+      );
     }
-  }, [history, state]);
+  }, [dispatch, history, state]);
 
   return (
     <div className={clsx([styles.container, 'column middle center'])}>

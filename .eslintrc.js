@@ -5,7 +5,8 @@ module.exports = {
     '@typescript-eslint/class-name-casing': 0,
     '@typescript-eslint/ban-ts-ignore': 0,
     '@typescript-eslint/camelcase': 0,
-    'react/no-multi-comp': [2, { ignoreStateless: true }]
+    'react/no-multi-comp': [2, { ignoreStateless: true }],
+    "no-shadow": "off",
   },
   settings: {
     react: {

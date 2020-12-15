@@ -1,21 +1,18 @@
 import React from 'react';
 import clsx from 'clsx';
 import i18next from 'i18next';
-import { useHistory } from 'react-router';
 
 import logo from '../../assets/logo-wolox.png';
 import Button from '../Button';
-import { ROUTES } from '../../routers/constants';
+import { useDispatch } from '../../contexts/UserContext';
+import { actionCreators } from '../../contexts/UserContext/reducer';
 
 import styles from './styles.module.scss';
 
 function NavBar() {
-  const history = useHistory();
+  const dispatch = useDispatch();
 
-  const handleClick = () => {
-    localStorage.clear();
-    history.replace(ROUTES.login);
-  };
+  const handleClick = () => dispatch(actionCreators.logout());
 
   return (
     <nav className={clsx(['row middle space-around', styles.navbar])}>
