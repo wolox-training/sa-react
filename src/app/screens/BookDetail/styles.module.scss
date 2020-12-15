@@ -1,0 +1,84 @@
+@import '../../../scss/variables/colors';
+
+.container {
+  min-height: 100vh;
+}
+
+.back-container {
+  width: 70%;
+
+  .link {
+    color: $black;
+    width: 70px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.card {
+  background-color: $white;
+  box-shadow: 4px 4px 10px 0 rgba($black, 0.5);
+  display: grid;
+  gap: 52px;
+  grid-template-columns: auto minmax(auto, 100%);
+  padding: 24px;
+  width: 70%;
+}
+
+.cover-container {
+  height: 368px;
+  max-width: 100%;
+  position: relative;
+  width: 261px;
+
+  .cover {
+    height: 100%;
+    width: 100%;
+  }
+
+  .badge {
+    position: absolute;
+    right: -10%;
+    top: -7%;
+    transform: rotate(5deg);
+  }
+}
+
+.title {
+  color: $black;
+  display: block;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38px;
+
+  &::after {
+    background-color: $earls-green;
+    content: '';
+    display: block;
+    height: 4px;
+    margin-top: 12px;
+    width: 100%;
+  }
+}
+
+.sub-title {
+  color: darken($gray, 20%);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.detail-field {
+  color: $black;
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 36px 0;
+
+  .data {
+    color: darken($gray, 10%);
+    font-size: 20px;
+    line-height: 24px;
+  }
+}

@@ -94,6 +94,5 @@ describe('Home screen', () => {
     await waitFor(() => screen.findAllByRole('button'));
 
     expect(getSession()).toBeNull();
-    expect(history.location.pathname).toBe(ROUTES.login);
   });
 });

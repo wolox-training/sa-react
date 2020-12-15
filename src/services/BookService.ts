@@ -1,5 +1,7 @@
 import api from '../config/api';
-import { BooksResponse } from '../typings/book';
-import { ErrorResponse } from '../typings/response';
+import { BookResponse, BooksResponse } from '../typings/book';
+import { ErrorResponse, SingleErrorResponse } from '../typings/response';
 
 export const getBooks = () => api.get<BooksResponse, ErrorResponse>('/books');
+
+export const getBook = (id: string) => api.get<BookResponse, SingleErrorResponse>(`/books/${id}`);

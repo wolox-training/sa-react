@@ -20,3 +20,13 @@ export interface BooksResponse {
   currentPage: number;
   nextPage: null;
 }
+
+export interface BookResponse {
+  id: number;
+  author: string;
+  title: string;
+  imageUrl: string;
+  editor: string;
+  year: string;
+  genre: string;
+}
