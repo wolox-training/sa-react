@@ -13,7 +13,7 @@ import Alert from '../../components/Alert';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 import logo from '../../assets/logo-wolox.png';
-import { saveSession } from '../../../utils/session';
+import { saveSession } from '../../../services/LocalStorageService';
 
 import styles from './styles.module.scss';
 import { FORM_FIELDS } from './constants';

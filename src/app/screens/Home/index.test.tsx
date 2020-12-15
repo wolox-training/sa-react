@@ -7,7 +7,7 @@ import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 
 import { BooksResponse } from '../../../typings/book';
-import { getSession, saveSession } from '../../../utils/session';
+import { getSession, saveSession } from '../../../services/LocalStorageService';
 import { ROUTES } from '../../routers/constants';
 
 import Home from './';

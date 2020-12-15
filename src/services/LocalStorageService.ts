@@ -1,4 +1,4 @@
-import { Nullable } from './types';
+import { Nullable } from '../utils/types';
 
 interface SessionData {
   token: string;
