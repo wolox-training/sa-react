@@ -1,6 +1,8 @@
 import { create } from 'apisauce';
 import { CamelcaseSerializer, SnakecaseSerializer } from 'cerealizr';
 
+import { getSession } from '../services/LocalStorageService';
+
 const deserializer = new CamelcaseSerializer();
 const serializer = new SnakecaseSerializer();
 
@@ -45,6 +47,14 @@ api.addResponseTransform((response) => {
 api.addRequestTransform((request) => {
   if (request.data) {
     request.data = serializer.serialize(request.data);
+  }
+
+  const session = getSession();
+
+  if (session) {
+    request.headers.uid = session.uid;
+    request.headers.client = session.client;
+    request.headers['access-token'] = session.token;
   }
 });
 

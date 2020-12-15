@@ -9,7 +9,7 @@ import { createMemoryHistory } from 'history';
 import { LoginResponse } from '../../../typings/user';
 import { ROUTES } from '../../routers/constants';
 import { STATUS_CODES } from '../../../config/api';
-import { ErrorAuthData } from '../../../typings/response';
+import { ErrorResponse } from '../../../typings/response';
 
 import { FORM_FIELDS } from './constants';
 
@@ -33,7 +33,7 @@ const mockLoginResponse: LoginResponse = {
   }
 };
 
-const mockLoginFailure: ErrorAuthData = {
+const mockLoginFailure: ErrorResponse = {
   success: false,
   errors: ['Invalid login credentials. Please try again.']
 };
