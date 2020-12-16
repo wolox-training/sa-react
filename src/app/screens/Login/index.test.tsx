@@ -10,6 +10,7 @@ import { LoginResponse } from '../../../typings/user';
 import { ROUTES } from '../../routers/constants';
 import { STATUS_CODES } from '../../../config/api';
 import { ErrorResponse } from '../../../typings/response';
+import { getSession } from '../../../services/LocalStorageService';
 
 import { FORM_FIELDS } from './constants';
 
@@ -115,7 +116,7 @@ describe('Login screen', () => {
 
     await submitForm();
 
-    expect(history.location.pathname).toBe(ROUTES.home);
+    expect(getSession()).not.toBeNull();
   });
 
   test('Cant logged in if request goes wrong', async () => {

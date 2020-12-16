@@ -6,6 +6,7 @@ import Login from '../screens/Login';
 import Home from '../screens/Home';
 import { useDispatch, useSelector } from '../contexts/UserContext';
 import { actionCreators } from '../contexts/UserContext/reducer';
+import BookDetail from '../screens/BookDetail';
 
 import { ROUTES } from './constants';
 import HandleRoute from './HandleRoute';
@@ -24,6 +25,13 @@ function AppRouter() {
       <Switch>
         <HandleRoute authenticated={authenticated} component={Login} path={ROUTES.login} exact />
         <HandleRoute authenticated={authenticated} component={SignUp} path={ROUTES.signup} exact />
+        <HandleRoute
+          authenticated={authenticated}
+          component={BookDetail}
+          path={ROUTES.bookDetail}
+          exact
+          protect
+        />
         <HandleRoute authenticated={authenticated} component={Home} path={ROUTES.home} exact protect />
       </Switch>
     </BrowserRouter>
